@@ -1,0 +1,44 @@
+
+<div class="container">
+    <form #searchForm="ngForm" (ngSubmit)="applyRoleFilter()">
+      <div class="form-group">
+        <label for="roleInput">Search by Role:</label>
+        <input type="text" class="form-control" id="roleInput" [(ngModel)]="searchRole" name="searchRole" placeholder="Enter Role">
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  
+    <div *ngIf="filteredPlayerList.length > 0">
+      <h2>Players with Role: {{ searchRole }}</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Player Name</th>
+            <th>Jersey Number</th>
+            <th>Role</th>
+            <th>Total Matches</th>
+            <th>Team Name</th>
+            <th>Country Name</th>
+            <th>Description</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of filteredPlayerList">
+            <td>{{ player.playerName }}</td>
+            <td>{{ player.jerseyNumber }}</td>
+            <td>{{ player.role }}</td>
+            <td>{{ player.totalMatches }}</td>
+            <td>{{ player.teamName }}</td>
+            <td>{{ player.countryName }}</td>
+            <td>{{ player.description }}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div *ngIf="filteredPlayerList.length === 0">
+    </div>
+  </div>
+  

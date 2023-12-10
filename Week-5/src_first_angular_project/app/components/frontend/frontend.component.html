@@ -1,0 +1,32 @@
+<div>
+  <form #playerForm="ngForm" (ngSubmit)="addPlayer(playerForm)">
+
+    <label for="playerID">Player ID:</label>
+<input type="text" id="playerID" name="playerID" [(ngModel)]="newPlayer.playerID" required><br>
+    
+
+    <label for="playerName">Player Name:</label>
+    <input type="text" id="playerName" name="playerName" [(ngModel)]="newPlayer.playerName" required><br>
+
+    <label for="jerseyNumber">Jersey Number:</label>
+    <input type="number" id="jerseyNumber" name="jerseyNumber" [(ngModel)]="newPlayer.jerseyNumber" required><br>
+
+    <label for="role">Role:</label>
+    <input type="text" id="role" name="role" [(ngModel)]="newPlayer.role" required><br>
+
+    <label for="totalMatches">Total Matches:</label>
+    <input type="number" id="totalMatches" name="totalMatches" [(ngModel)]="newPlayer.totalMatches" required><br>
+
+    <label for="teamName">Team Name:</label>
+    <input type="text" id="teamName" name="teamName" [(ngModel)]="newPlayer.teamName" required><br>
+
+    <label for="stateName">State Name:</label>
+    <input type="text" id="stateName" name="stateName" [(ngModel)]="newPlayer.stateName" required><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="newPlayer.description" required></textarea><br>
+
+    <button type="submit">Add Player</button>
+    <p *ngIf="isSuccess">Player added successfully!</p>
+  </form>
+</div>
